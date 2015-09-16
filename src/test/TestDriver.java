@@ -9,9 +9,13 @@
 package test;
 
 
-import com.cloudservice.provider.AliDriver;
-import com.cloudservice.provider.BaiduDriver;
-import com.cloudservice.provider.TencentDriver;
+import java.io.File;
+import java.util.List;
+
+import com.baidubce.services.bos.model.BosObjectSummary;
+import com.cloudservice.provider.BaiduProvider;
+
+
 
 /**
  * ClassName: TestDriver 
@@ -22,6 +26,19 @@ import com.cloudservice.provider.TencentDriver;
 public class TestDriver {
 
 	public static void main(String args[]){
-		TencentDriver.getInstance().showTencentConfig();
+		
+		BaiduProvider bp = new BaiduProvider();
+		List<BosObjectSummary> list =bp.getChild("");
+		
+		for(BosObjectSummary os:list){
+			System.out.println(os.getKey());
+		//	bp.deleteObject("", os.getKey());
+		}
+		
+//		File file = new File("E://test.txt");
+//		System.out.println(bp.uploadFile("zww/", "test", file));
+		
+		bp.createFolder("hello/ho/", "");
+		
 	}
 }
