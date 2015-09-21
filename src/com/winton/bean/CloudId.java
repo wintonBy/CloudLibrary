@@ -37,6 +37,13 @@ public enum CloudId {
 			// TODO Auto-generated method stub
 			return this.name;
 		}
-		
+
+		public String getName() {
+			return name;
+		}
+
+		public int getId() {
+			return id;
+		}
 		
 }

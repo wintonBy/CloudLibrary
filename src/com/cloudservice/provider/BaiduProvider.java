@@ -144,6 +144,11 @@ public class BaiduProvider  extends BaseProvider<BosObjectSummary> {
 	}
 
 
+	public Error getError() {
+		return error;
+	}
+
+
 	
 
 	
